@@ -1,0 +1,18 @@
+http://does.not.exist/test : Error(getaddrinfo ENOTFOUND does.not.exist does.not.exist:80)
+http://does.not.exist/test : Error(getaddrinfo ENOTFOUND does.not.exist does.not.exist:80)
+https://www.google.com : OK = 200
+https://www.indusface.com/products : Moved Permanently = 301
+http://does.not.exist/test : Error(getaddrinfo ENOTFOUND does.not.exist does.not.exist:80)
+https://www.google.com : OK = 200
+https://www.indusface.com/products : Moved Permanently = 301
+https://www.google.com : OK = 200
+https://www.indusface.com/products : Moved Permanently = 301
+
+==========================
+
+Total Request : 9
+
+successResponseCount  : 6
+
+errorResponseCount : 3
+

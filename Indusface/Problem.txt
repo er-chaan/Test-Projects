@@ -1,0 +1,58 @@
+The task is to write a program in Node that takes a list of URIs, 
+performs HTTP requests to fetch them and collects the responses. 
+Deliverable is the source code with config files, data files if any, 
+couple of paragraphs on solution, build instructions. 
+
+Option 1: If you decide to write a command line based tool
+1.       take the input list of URLs from a text file
+2.       every 2 seconds print out the current status of the requests
+3.       When all requests are done, print the final results and exit
+
+Eg.
+Input text file:
+https://www.google.com
+https://www.indusface.com/products
+http://does.not.exist/test
+
+every 2 seconds
+https://www.google.com : Succcess. Status Code = 200
+https://www.indusface.com/products : pending
+http://does.not.exist/test : Failed (error: getaddrinfo ENOTFOUND ...(basically the error received from library call))
+ 
+final (similar to above)
+
+ 
+Option 2: write a simple REST service
+1.       take the input list of URLs in an API, POST /multiGet, JSON body will hve array of URLs
+2.       Have another API to print out the current status of the requests, GET /status
+
+Eg.
+POST /multiGet
+Body is:
+{
+    "urls" : [
+        "https://www.google.com",
+        "https://www.indusface.com/products ",
+        "http://does.not.exist/test"
+    ]
+}
+ 
+GET /status
+Response (JSON) is:
+{
+    "urls": [{
+            "url": "https://www.google.com",
+            "status": "Success",
+            "statusCode" : "200"
+        },
+        {
+            "url": "https://www.indusface.com/products",
+            "status": "pending"
+        },
+        {
+            "url": "http://does.not.exist/test",
+            "status": "Failed",
+            "error" : "getaddrinfo ENOTFOUND"
+        }
+    ]
+}
