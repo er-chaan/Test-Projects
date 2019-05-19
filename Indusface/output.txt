@@ -1,18 +1,109 @@
-http://does.not.exist/test : Error(getaddrinfo ENOTFOUND does.not.exist does.not.exist:80)
-http://does.not.exist/test : Error(getaddrinfo ENOTFOUND does.not.exist does.not.exist:80)
-https://www.google.com : OK = 200
+httpsxxx://www.walmart.ca/en/ip/hp-stream-14-cb110ca-14-inch-laptop-white-intel-celeron-n4000-intel-uhd-600-4gb-ram-64gb-emmc-windows-10-s-4jc81uaabl/6000198793458 : Error(Protocol "httpsxxx:" not supported. Expected "http:")
+httpxx://www.chinadaily.com.cn : Error(Protocol "httpxx:" not supported. Expected "http:")
+https://does.not.exist/test : Error(getaddrinfo ENOTFOUND does.not.exist does.not.exist:443)
+http://www.google.com : OK = 200
 https://www.indusface.com/products : Moved Permanently = 301
-http://does.not.exist/test : Error(getaddrinfo ENOTFOUND does.not.exist does.not.exist:80)
-https://www.google.com : OK = 200
-https://www.indusface.com/products : Moved Permanently = 301
-https://www.google.com : OK = 200
-https://www.indusface.com/products : Moved Permanently = 301
+this.parsedUrl : Error(connect ECONNREFUSED 127.0.0.1:80)
+this.parsedUrl : Error(connect ECONNREFUSED 127.0.0.1:80)
+http://www.youtube.com : Moved Permanently = 301
+https://www.google.com/search?client=firefox-b-ab&q=What+are+some+examples+of+URL%3F&sa=X&ved=2ahUKEwih3bm-t6fiAhVGo48KHVCRA1QQ3rMBKAJ6BAgNEAc : OK = 200
+http://www.facebook.com : Found = 302
+blank url : Error(connect ECONNREFUSED 127.0.0.1:80)
+http://www.yahoo.com : Moved Permanently = 301
+http://www.amazon.com : Moved Permanently = 301
+wrong url : Error(connect ECONNREFUSED 127.0.0.1:80)
+https://gist.github.com/demersdesigns/4442cd84c1cc6c5ccda9b19eac1ba52b : OK = 200
+https://www.baidu.com : OK = 200
+http://www.google.co.in : OK = 200
+http://www.qq.com : Moved Temporarily = 302
+http://www.live.com : Moved Permanently = 301
+https://www.wikipedia.org : OK = 200
+https://help.parsehub.com/hc/en-us/articles/218187697-Enter-a-list-of-URLs-to-crawl : OK = 200
+https://www.walmart.ca/en/ip/hp-17-by0002ca-173-laptop-natural-silver-and-ash-silver-core-i5-8250u-intel-uhd-graphics-620-8gb-ddr4-1-tb-5400-rpm-sata-windows-10-home-4bq83uaabl/6000198528157 : OK = 200
+https://www.walmart.ca/en/ip/acer-aspire-3-156-laptop-amd-e2-9000-amd-radeon-r2-graphics-8-gb-ddr4-1-tb-hard-drive-windows-10-home-nxgnvaa019/6000197843008 : OK = 200
+http://www.twitter.com : Moved Permanently = 301
+http://www.taobao.com : Found = 302
+http://www.bing.com : OK = 200
+http://www.instagram.com : Moved Permanently = 301
+http://www.sina.com.cn : Moved Temporarily = 302
+http://www.weibo.com : Moved Permanently = 301
+http://www.google.de : OK = 200
+https://www.yahoo.co.jp : OK = 200
+http://www.yandex.ru : Moved Permanently = 301
+http://www.reddit.com : Moved Permanently = 301
+https://www.msn.com : Found = 302
+http://www.google.fr : OK = 200
+http://www.tmall.com : Found = 302
+https://www.google.co.uk : OK = 200
+http://www.ebay.com : Moved Permanently = 301
+https://www.linkedin.com : OK = 200
+https://www.hao123.com : OK = 200
+https://www.vk.com : Found = 302
+http://www.google.com.br : OK = 200
+http://www.amazon.co.jp : Moved Permanently = 301
+http://www.sohu.com : OK = 200
+http://www.pinterest.com : Moved Permanently = 301
+http://www.360.cn : Moved Permanently = 301
+https://www.t.co : Not Found = 404
+http://www.microsoft.com : Moved Temporarily = 302
+http://www.google.es : OK = 200
+https://www.google.ru : OK = 200
+https://www.google.it : OK = 200
+http://www.tumblr.com : Redirect = 301
+https://www.gmw.cn : Error(Hostname/IP doesn't match certificate's altnames: "Host: www.gmw.cn. is not in the cert's altnames: DNS:webssl.chinanetcenter.com, DNS:i.l.inmobicdn.net, DNS:dl.jphbpk.gxpan.cn, DNS:dl.givingtales.gxpan.cn, DNS:dl.toyblast.gxpan.cn, DNS:dl.sds.gxpan.cn, DNS:download.ctrip.com, DNS:mh.tiancity.com, DNS:cdn.hxjyios.iwan4399.com, DNS:ios.hxjy.iwan4399.com, DNS:gjzx.gjzq.com.cn, DNS:*.zhe800.com, DNS:*.qiyipic.com, DNS:*.vxinyou.com, DNS:*.gdjh.vxinyou.com, DNS:*.3000.com, DNS:*.4399youpai.com, DNS:w.tancdn.com, DNS:*.3000api.com, DNS:*.kuyinyun.com, DNS:*.kuyin123.com, DNS:*.diyring.cc, DNS:3000test.com, DNS:*.3000test.com, DNS:www.3387.com, DNS:*.cankaoxiaoxi.com, DNS:*.service.kugou.com, DNS:xiuxiu.huodong.meitu.com, DNS:*.meitu.com, DNS:*.meitudata.com, DNS:xiuxiu.web.meitu.com, DNS:api.account.meitu.com, DNS:open.web.meitu.com, DNS:id.api.meitu.com, DNS:api.makeup.meitu.com, DNS:im.live.meipai.com, DNS:*.meipai.com, DNS:img1.homekoocdn.com, DNS:cdn.homekoocdn.com, DNS:cdn1.homekoocdn.com, DNS:cdn2.homekoocdn.com, DNS:cdn3.homekoocdn.com, DNS:cdn4.homekoocdn.com, DNS:img.homekoocdn.com, DNS:img2.homekoocdn.com, DNS:img3.homekoocdn.com, DNS:img4.homekoocdn.com, DNS:*.macauslot.com, DNS:*.samsungapps.com, DNS:auto.tancdn.com, DNS:*.winbo.top, DNS:static.bst.meitu.com, DNS:api.xiuxiu.meitu.com, DNS:api.photo.meituyun.com, DNS:h5.selfiecity.meitu.com, DNS:api.selfiecity.meitu.com, DNS:h5.beautymaster.meiyan.com, DNS:api.beautymaster.meiyan.com, DNS:cpg.meitubase.com, DNS:ms.awqsaged.cn, DNS:fanxing2.kugou.com, DNS:sso.56.com, DNS:upload.qf.56.com, DNS:cdn.danmu.56.com, DNS:www-ppd.hermes.cn, DNS:www-uat.hermes.cn, DNS:www-ts2.hermes.cn, DNS:www-tst.hermes.cn, DNS:*.syyx.com, DNS:*.zhuoquapp.com, DNS:*.5054399.com, DNS:*.aiwan4399.com, DNS:user.beevideo.bestv.com.cn, DNS:*.3839.com, DNS:*.actdelivery.net, DNS:*.4399.cn, DNS:*.163.com, DNS:m.kf.cn, DNS:cmscn.bmwgroup.com, DNS:secure-int-web-tic-cn.bmwgroup.com, DNS:pvmessage.cn.bmwgroup.com, DNS:secure-infonet3.bmwgroup.com, DNS:secure-infonet3-int.bmwgroup.com, DNS:secure-web-tic-mini-cn.bmwgroup.com, DNS:secure-int-web-tic-mini-cn.bmwgroup.com, DNS:secure-infonet2-int.bmwgroup.com, DNS:secure-web-tic-cn.bmwgroup.com, DNS:yjzhres.bnngame.com, DNS:*.account.meitu.com, DNS:cdn.ssjj.iwan4399.com, DNS:*.iwan4399.com, DNS:m.kyxnz.cn, DNS:mfanxing.kugou.com, DNS:redirect.contdelivery.com, DNS:market.suanya.com, DNS:m.bbs.3839.com, DNS:*.mysiteres.com, DNS:fstest.zj96596.com, DNS:fshl.zj96596.com, DNS:*.mitagtenni.net, DNS:www.cgdcbidding.com, DNS:*.ourdvsss.com, DNS:*.servyou.com.cn, DNS:*.3839app.com, DNS:*.elinkdata.cn, DNS:yxd.flashgame163.com, DNS:*.bmwgroup.cn, DNS:ss.9k9.cn, DNS:ss.1z222.com, DNS:ss.3z222.com, DNS:fanxing.kugou.com, DNS:m.qrgycd.cn, DNS:m.kdbfnh.cn, DNS:m.kgocyx49293.cn, DNS:m.llvhsv80839.cn, DNS:m.toevys29306.cn, DNS:m.ylrvmp52112.cn, DNS:m.trvpyp07887.cn, DNS:m.zvfxsb31435.cn, DNS:m.smdhek58726.cn, DNS:m.tsijhd02729.cn, DNS:m.srvatj26038.cn, DNS:m.arxnfj14120.cn, DNS:m.bqqsdv73724.cn, DNS:m.ohkcgw97751.cn, DNS:m.poayib14117.cn, DNS:m.zykhgz75430.cn, DNS:m.nkjfzq43034.cn, DNS:m.sywstx68371.cn, DNS:m.qdhgpu54862.cn, DNS:m.nyqoor62163.cn, DNS:sj.nzsiteres.com, DNS:dloyaltyreport.cn.bmwgroup.com, DNS:dloyaltyadmin.cn.bmwgroup.com, DNS:dloyaltydealer.cn.bmwgroup.com, DNS:jh.showguide.cn")
+https://www.wordpress.com : Moved Permanently = 301
+http://www.paypal.com : Moved Permanently = 301
+https://www.netflix.com : Found = 302
+http://www.stackoverflow.com : Moved Permanently = 301
+https://www.blogspot.com : Moved Temporarily = 302
+http://www.apple.com : Moved Permanently = 301
+http://www.naver.com : Moved Temporarily = 302
+http://www.aliexpress.com : Found = 302
+http://www.imdb.com : Moved Permanently = 301
+http://www.google.co.kr : OK = 200
+https://www.imgur.com : Moved Permanently = 301
+http://www.jd.com : Moved Permanently = 301
+http://www.blogger.com : Moved Temporarily = 302
+http://www.facebook.com : Found = 302
+https://www.github.com : Moved Permanently = 301
+https://www.google.ca : OK = 200
+https://www.whatsapp.com : Found = 302
+http://www.office.com : Moved Permanently = 301
+https://www.fc2.com : Forbidden = 403
+https://www.amazon.in : OK = 200
+http://www.google.co.id : OK = 200
+https://www.ok.ru : OK = 200
+http://www.tianya.cn : OK = 200
+http://www.youku.com : Moved Permanently = 301
+http://www.amazon.de : Moved Permanently = 301
+http://www.craigslist.org : Found = 301
+https://www.google.pl : OK = 200
+https://www.nicovideo.jp : OK = 200
+http://www.taobao.com : Found = 302
+https://www.google.co.uk : OK = 200
+http://www.bing.com : OK = 200
+http://www.instagram.com : Moved Permanently = 301
+https://www.hao123.com : OK = 200
+https://www.yandex.ru : Moved Permanently = 301
+https://www.ebay.com : OK = 200
+http://www.weibo.com : Moved Permanently = 301
+http://www.sina.com.cn : Moved Temporarily = 302
+https://www.reddit.com : OK = 200
+http://www.google.de : OK = 200
+http://www.yandex.ru : Moved Permanently = 301
+https://www.linkedin.com : OK = 200
+https://www.yahoo.co.jp : OK = 200
+https://www.msn.com : Found = 302
+http://www.google.co.uk : OK = 200
+https://www.vk.com : Found = 302
+https://www.hao123.com : OK = 200
+http://www.rakuten.co.jp : OK = 200
 
 ==========================
 
-Total Request : 9
+Total Request : 100
 
-successResponseCount  : 6
+successResponseCount  : 92
 
-errorResponseCount : 3
+errorResponseCount : 8
 

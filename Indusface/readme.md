@@ -1,9 +1,9 @@
 => feed input urls in 
-# input.txt file
+ - input.txt file
 
 => to RUN
-# node node1.js
+ - node node1.js
 
 => expected outcome
-# command line output
-# output.txt file
+ - command line output
+ - output.txt file
