@@ -1,0 +1,49 @@
+Nodejs Task
+
+
+You need make a chat platform in nodejs.
+
+so the flow will be like this.
+??- show dummy page with chatbox.
+??- show user id in chatbox
+??- userid must be unique for each user (a random number assigned by server) and will same for him life time...
+user can enter his nick name show people can see his name only when chating with him.
+??- if i do change my name it should be updated to all users who are chatting with me right now.
+??- user id is only way to connect with other people. 
+??- even if i open same url two tabs both tabs will have same user id means it will consider me as same user.
+??- if reload the page chat should resume at where it was.
+??- user will enter another user's id in chatbox to start chat with him
+??- user can add more member in already running chat by entering another user's id.
+
+Client Side:
+for client js framework you can use your choice of system or flow. or library.  
+
+Important points
+- everything should be in sync all the time in all tabs for that same user...
+- if start chat form one tab it should be started in another tab as well. if i do close one all should be closed.
+- we can do group chat.. if enter somebody's user_id and if he is already chatting then i'll be 
+      joined into them we'll be a group now or even he can add me while chating with somebody.
+- we must see whom we are chating with.
+
+Database:
+no need to save anything about users in database. 
+its all done in realtime so you can save messages within nodejs.
+
+following must be used:
+socket.io
+
+following can be used.
+
+for dummy html and page
+https://v4-alpha.getbootstrap.com/examples/jumbotron/
+
+for chat box ui
+http://bootsnipp.com/tags/chat
+
+and google, stackoverflow etc..
+
+Jumbotron Template for Bootstrap
+https://v4-alpha.getbootstrap.com
+
+HTML Snippets for Twitter Boostrap framework : Bootsnipp.com
+http://bootsnipp.com
