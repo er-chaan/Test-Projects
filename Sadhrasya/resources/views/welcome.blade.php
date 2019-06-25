@@ -64,7 +64,7 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <!-- <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -94,6 +94,13 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
+        </div> -->
+        <div class="container">
+            @foreach ($results as $result)
+                {{ $result->Type }}
+            @endforeach
         </div>
+
+        <!-- {{ $results->links() }} -->
     </body>
 </html>
