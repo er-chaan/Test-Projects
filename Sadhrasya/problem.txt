@@ -1,0 +1,30 @@
+Write code where considering given parameters and given query will be the input for the system. Our requiremnt is to generate a Table using this pramater and query.
+1. Based upon select statment Table column should be defined automatically.
+2. Based upon parameters Input Boxes should be generated automatically so that user can filter/Search the data in table.
+3. Pagination needs to implemented
+
+Query Parameters :
+$site_id, $vendor_id = NULL, $payment_mode = NULL, $dateFrom = NULL, $dateTo = NULL
+Query :
+SELECT
+    `sdh_transaction_type`.`transaction_type` AS `Type`,
+    `sdh_site_transaction`.`date` AS `Date`,
+    `sdh_site_transaction`.`debit` AS  `Debit`,
+    `sdh_site_transaction`.`credit` AS `Credit`,
+    `sdh_site_transaction`.`reference_no` AS `Reference`,
+    `sdh_site_transaction`.`description` AS `Note`,
+    `sdh_site_transaction`.`transaction_method` AS `Method`,
+    `sdh_site_transaction`.`vendor_id` AS `v_id`,
+    `sdh_site_transaction`.`vendor_name` AS `Vendor`,
+    `sdh_site_transaction`.`transaction_id` AS `tran_id`,
+    `sdh_site`.`site_name` AS `Site`
+FROM
+    `sdh_site_transaction` INNER JOIN `sdh_transaction_type` ON `sdh_site_transaction`.`transaction_type_id` = `sdh_transaction_type`.`transaction_type_id`
+    INNER JOIN `sdh_site` ON `sdh_site_transaction`.`site_id` = `sdh_site`.`site_id`
+WHERE 1 "
+    . ($site_id != "" ? " AND `sdh_site_transaction`.`site_id`='$site_id' " : "")
+    . ($vendor_id != "" ? " AND `vendor_id` = '$vendor_id' " : "")
+    . ($payment_mode != "" ? " AND `transaction_method` = '$payment_mode' " : "")
+    . ($dateFrom != "" && $dateTo != "" ? " AND `date` BETWEEN '$dateFrom' AND '$dateTo' " : "")
+    . " ORDER BY `date` DESC;
+
