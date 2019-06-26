@@ -1,106 +1,66 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <title>SAdhrasya task</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.5/css/fixedHeader.dataTables.min.css">
+        <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
+            thead input {
+                width: 100%;
             }
         </style>
     </head>
     <body>
-        <!-- <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div> -->
         <div class="container">
-            @foreach ($results as $result)
-                {{ $result->Type }}
-            @endforeach
+            <table class="table table-bordered table-sm display"  id="dataTableId">
+                <thead>
+                    <tr>
+                        @foreach ($results[0] as $key => $value)
+                            <th>{{ $key }}</th>
+                        @endforeach
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($results as $result)
+                        <tr>
+                        @foreach ($result as $key => $value)
+                            <td>{{ $value }}</td>
+                        @endforeach
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
-
-        <!-- {{ $results->links() }} -->
+        <script>
+            $(document).ready(function() {
+                $('#dataTableId thead tr').clone(true).appendTo( '#dataTableId thead' );
+                $('#dataTableId thead tr:eq(1) th').each( function (i) {
+                    var title = $(this).text();
+                    $(this).html( '<input type="text" placeholder="Search '+title+'" />' );            
+                    $( 'input', this ).on( 'keyup change', function () {
+                        if ( table.column(i).search() !== this.value ) {
+                            table
+                                .column(i)
+                                .search( this.value )
+                                .draw();
+                        }
+                    } );
+                } );
+                var table = $('#dataTableId').DataTable( {
+                    "pageLength": 5,
+                    ordering: false,
+                    'processing': true,
+                    'language': {
+                        'loadingRecords': '&nbsp;',
+                        'processing': 'Loading...'
+                    }   
+                } );
+            } );
+        </script>
     </body>
 </html>

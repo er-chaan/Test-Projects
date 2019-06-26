@@ -1,10 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 class TestController extends Controller
 {
     function index(){
@@ -35,11 +34,8 @@ class TestController extends Controller
                 . ($vendor_id != "" ? " AND `vendor_id` = '$vendor_id' " : "")
                 . ($payment_mode != "" ? " AND `transaction_method` = '$payment_mode' " : "")
                 . ($dateFrom != "" && $dateTo != "" ? " AND `date` BETWEEN '$dateFrom' AND '$dateTo' " : "")
-                . " ORDER BY `date` DESC;";
-
-        $results = DB::select($query, [1]);
-
+                . " ORDER BY `date`";                
+        $results = DB::select($query);
         return view('welcome', ['results' => $results]);
-
     }
 }
