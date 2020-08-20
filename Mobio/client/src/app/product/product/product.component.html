@@ -1,0 +1,25 @@
+<p>product catalogue!</p>
+<button (click)="getSortedProducts('price')">Sort by price</button>
+<button (click)="getSortedProducts('size')">Sort by size</button>
+<button (click)="getSortedProducts('id')">Sort by id</button>
+
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "large" color = "#b41010" type = "ball-scale" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
+<table id="products">
+    <tbody style="width: 100% !important;" (scroll)="scrollHandler($event)" >
+        <tr>
+            <th>ID</th>
+            <th>Size</th>
+            <th>Price</th>
+            <th>Face</th>
+            <th>Date</th>
+        </tr>
+      <tr *ngFor="let p of products; trackBy:identify;">
+        <td>{{p.id}}</td>
+        <td>{{p.size}}</td>
+        <td>{{p.price | currency }}</td>
+        <td [ngStyle]="{'font-size':p.size +'px'}">{{p.face}}</td>
+        <td>{{p.date | date:"short"}}</td>
+      </tr>
+    </tbody> 
+  </table>
