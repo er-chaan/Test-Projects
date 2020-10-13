@@ -1,0 +1,73 @@
+<div *ngIf="loading">
+    <app-loader></app-loader>
+</div>
+<div class="row">
+    <div class="col-md-4">
+            
+    </div>
+    <form class="form col-md-4" [formGroup]="signupForm">
+        <div *ngIf="isSignupFormInValid" class="form-group has-feedback has-error">
+            {{isSignupFormInValidMsg}}
+        </div>
+        <div formGroupName="user">
+            <div class="form-group">
+                <label for="email">Email * :</label>
+                <input formControlName="email" type="email" class="form-control" placeholder="Enter email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password * :</label>
+                <input formControlName="password" type="password" class="form-control" placeholder="Enter password" id="password" required>
+            </div>
+            <div class="form-group">
+                <label for="first_name">Firstname * :</label>
+                <input formControlName="first_name" type="text" class="form-control" placeholder="Enter first name" id="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Lastname * :</label>
+                <input formControlName="last_name" type="text" class="form-control" placeholder="Enter last name" id="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile * :</label>
+                <input formControlName="mobile" type="tel" class="form-control" placeholder="9004313006" id="mobile" pattern="[0-9]{10}" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Role * :</label>
+                <select formControlName="role" class="form-control" placeholder="Select role" id="role" required>
+                    <option value="patient">Patient</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender * :</label>
+                <select formControlName="gender" class="form-control" placeholder="Select gender" id="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+        </div>
+
+        <div formGroupName="profile">
+            <div class="form-group">
+                <label for="date_of_birth">Date of Birth * :</label>
+                <input formControlName="date_of_birth" type="date" class="form-control" placeholder="9004313006" id="date_of_birth" required>
+            </div>
+        </div>
+        <div formGroupName="device_detail">
+            <label for="device_type">Device type * :</label>
+            <select formControlName="device_type" class="form-control" placeholder="Select device" id="device_type" required>
+                <option value="web">Web</option>
+                <option value="iob">Ios</option>
+                <option value="android">Android</option>
+            </select>
+            <div class="form-group">
+                <label for="player_id">Player id * :</label>
+                <input formControlName="player_id" type="text" class="form-control" placeholder="Player Id" id="player_id" required>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;" (click)="signup()">Submit</button>
+    </form> 
+<br><br>
+    <div class="col-md-4">
+        
+    </div>
+</div>
